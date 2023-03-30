@@ -29,7 +29,7 @@ def process_seg(path: pathlib.Path, size: Tuple[int, int]):
 
 def load_folder(path: pathlib.Path, size: Tuple[int, int] = (128, 128)):
     data = []
-    for file in sorted(p.glob("*.bmp")):
+    for file in sorted(path.glob("*.bmp")):
         img = process_img(file, size=size)
         seg_file = file.with_suffix(".png")
         seg = process_seg(seg_file, size=size)

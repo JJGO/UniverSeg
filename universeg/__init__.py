@@ -1,1 +1,1 @@
-from .model import UniverSeg, CrossBlock, CrossConv2d
+from .model import UniverSeg, CrossBlock, CrossConv2d, universeg
