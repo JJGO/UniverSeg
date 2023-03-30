@@ -124,7 +124,7 @@ class CrossBlock(nn.Module):
 @dataclass(eq=False, repr=False)
 class UniverSeg(nn.Module):
 
-    encoder_blocks: List[size2t] = (64, 64, 64, 64)
+    encoder_blocks: List[size2t]
     decoder_blocks: Optional[List[size2t]] = None
 
     def __post_init__(self):
@@ -189,3 +189,19 @@ class UniverSeg(nn.Module):
         target = self.out_conv(target)
 
         return target
+
+
+@validate_arguments
+def universeg(version: Literal["v1"], pretrained: bool = False) -> nn.Module:
+    weights = {
+        "v1": "https://github.com/JJGO/UniverSeg-beta/releases/download/weights/universeg_v1_nf64_ss64_STA.pt"
+    }
+
+    if version == "v1":
+        model = UniverSeg(encoder_blocks=[64, 64, 64, 64])
+
+    if pretrained:
+        state_dict = torch.hub.load_state_dict_from_url(weights[version])
+        model.load_state_dict(state_dict)
+
+    return model
