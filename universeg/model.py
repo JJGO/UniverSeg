@@ -12,7 +12,7 @@ from .validation import (Kwargs, as_2tuple, size2t, validate_arguments,
                          validate_arguments_init)
 
 
-def get_nonlinearity(nonlinearity) -> nn.Module:
+def get_nonlinearity(nonlinearity: Optional[str]) -> nn.Module:
     if nonlinearity is None:
         return nn.Identity()
     if nonlinearity == "Softmax":
@@ -192,7 +192,7 @@ class UniverSeg(nn.Module):
 
 
 @validate_arguments
-def universeg(version: Literal["v1"] = 'v1', pretrained: bool = False) -> nn.Module:
+def universeg(version: Literal["v1"] = "v1", pretrained: bool = False) -> nn.Module:
     weights = {
         "v1": "https://github.com/JJGO/UniverSeg-beta/releases/download/weights/universeg_v1_nf64_ss64_STA.pt"
     }

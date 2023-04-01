@@ -20,6 +20,55 @@ class CrossConv2d(nn.Conv2d):
     Returns:
         tensor: B,Sx,Sy,Cout,H,W
     """
+    """
+    CrossConv2d is a convolutional layer that performs pairwise convolutions between elements of two input tensors.
+
+    Parameters
+    ----------
+    in_channels : int or tuple of ints
+        Number of channels in the input tensor(s).
+        If the tensors have different number of channels, in_channels must be a tuple
+    out_channels : int
+        Number of output channels.
+    kernel_size : int or tuple of ints
+        Size of the convolutional kernel.
+    stride : int or tuple of ints, optional
+        Stride of the convolution. Default is 1.
+    padding : int or tuple of ints, optional
+        Zero-padding added to both sides of the input. Default is 0.
+    dilation : int or tuple of ints, optional
+        Spacing between kernel elements. Default is 1.
+    groups : int, optional
+        Number of blocked connections from input channels to output channels. Default is 1.
+    bias : bool, optional
+        If True, adds a learnable bias to the output. Default is True.
+    padding_mode : str, optional
+        Padding mode. Default is "zeros".
+    device : str, optional
+        Device on which to allocate the tensor. Default is None.
+    dtype : torch.dtype, optional
+        Data type assigned to the tensor. Default is None.
+
+    Returns
+    -------
+    torch.Tensor
+        Tensor resulting from the pairwise convolution between the elements of x and y.
+
+    Notes
+    -----
+    x and y are tensors of size (B, Sx, Cx, H, W) and (B, Sy, Cy, H, W), respectively,
+    The function does the cartesian product of the elements of x and y to obtain a tensor
+    of size (B, Sx, Sy, Cx + Cy, H, W), and then performs the same convolution for all 
+    (B, Sx, Sy) in the batch dimension. Runtime and memory are O(Sx * Sy).
+
+    Examples
+    --------
+    >>> x = torch.randn(2, 3, 4, 32, 32)
+    >>> y = torch.randn(2, 5, 6, 32, 32)
+    >>> conv = CrossConv2d(in_channels=(4, 6), out_channels=7, kernel_size=3, padding=1)
+    >>> output = conv(x, y)
+    >>> output.shape  #(2, 3, 5, 7, 32, 32)
+    """
 
     @validate_arguments
     def __init__(
@@ -57,6 +106,22 @@ class CrossConv2d(nn.Conv2d):
         )
 
     def forward(self, x: torch.Tensor, y: torch.Tensor) -> torch.Tensor:
+        """
+        Compute pairwise convolution between all elements of x and all elements of y.
+
+        Parameters
+        ----------
+        x : torch.Tensor
+            Input tensor of size (B, Sx, Cx, H, W).
+        y : torch.Tensor
+            Input tensor of size (B, Sy, Cy, H, W).
+
+        Returns
+        -------
+        torch.Tensor
+            Tensor resulting from the cross-convolution between the elements of x and y.
+            Has size (B, Sx, Sy, Co, H, W), where Co is the number of output channels.
+        """
         B, Sx, *_ = x.shape
         _, Sy, *_ = y.shape
 
