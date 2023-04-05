@@ -130,8 +130,8 @@ class UniverSeg(nn.Module):
     def __post_init__(self):
         super().__init__()
 
-        self.downsample = Vmap(nn.MaxPool2d(2, 2))
-        self.upsample = Vmap(nn.UpsamplingBilinear2d(scale_factor=2))
+        self.downsample = nn.MaxPool2d(2, 2)
+        self.upsample = nn.UpsamplingBilinear2d(scale_factor=2)
 
         self.enc_blocks = nn.ModuleList()
         self.dec_blocks = nn.ModuleList()
@@ -177,12 +177,13 @@ class UniverSeg(nn.Module):
             if i == len(self.encoder_blocks) - 1:
                 break
             pass_through.append((target, support))
-            target, support = map(self.downsample, (target, support))
+            target = vmap(self.downsample, target)
+            support = vmap(self.downsample, support)
 
         for decoder_block in self.dec_blocks:
             target_skip, support_skip = pass_through.pop()
-            target = torch.cat([self.upsample(target), target_skip], dim=2)
-            support = torch.cat([self.upsample(support), support_skip], dim=2)
+            target = torch.cat([vmap(self.upsample, target), target_skip], dim=2)
+            support = torch.cat([vmap(self.upsample, support), support_skip], dim=2)
             target, support = decoder_block(target, support)
 
         target = E.rearrange(target, "B 1 C H W -> B C H W")
