@@ -195,7 +195,7 @@ class UniverSeg(nn.Module):
 @validate_arguments
 def universeg(version: Literal["v1"] = "v1", pretrained: bool = False) -> nn.Module:
     weights = {
-        "v1": "https://github.com/JJGO/UniverSeg-beta/releases/download/weights/universeg_v1_nf64_ss64_STA.pt"
+        "v1": "https://github.com/JJGO/UniverSeg/releases/download/weights/universeg_v1_nf64_ss64_STA.pt"
     }
 
     if version == "v1":
