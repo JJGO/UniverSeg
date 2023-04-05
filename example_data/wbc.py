@@ -54,7 +54,7 @@ def require_download_wbc():
 @dataclass
 class WBCDataset(Dataset):
     dataset: Literal["JTSC", "CV"]
-    split: Literal["support", "test"]
+    split: Literal["support", "test", "background"]
     label: Optional[Literal["nucleus", "cytoplasm"]] = None
     support_frac: float = 0.7
 
@@ -63,7 +63,7 @@ class WBCDataset(Dataset):
         path = root / {"JTSC": "Dataset 1", "CV": "Dataset 2"}[self.dataset]
         T = torch.from_numpy
         self._data = [(T(x)[None], T(y)) for x, y in load_folder(path)]
-        self._ilabel = {"cytoplasm": 1, "nucleus": 2}[self.label]
+        self._ilabel = {"cytoplasm": 1, "nucleus": 2, 'background': 0}[self.label]
         self._idxs = self._split_indexes()
 
     def _split_indexes(self):
