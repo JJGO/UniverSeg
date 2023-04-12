@@ -5,9 +5,9 @@ import einops as E
 import torch
 from torch import nn
 
-from .nn.cross_conv import CrossConv2d
-from .nn.init import reset_conv2d_parameters
-from .nn.vmap import Vmap, vmap
+from .nn import CrossConv2d
+from .nn import reset_conv2d_parameters
+from .nn import Vmap, vmap
 from .validation import (Kwargs, as_2tuple, size2t, validate_arguments,
                          validate_arguments_init)
 
