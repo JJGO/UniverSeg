@@ -1,10 +1,519 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; URL=https://github.com/JJGO/UniverSeg">
-  </head>
-  <body>
-    Redirecting to <a href="https://github.com/JJGO/UniverSeg">https://github.com/JJGO/UniverSeg</a>...
-  </body>
+
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+    <meta name="description" content="UniverSeg: Universal Medical Image Segmentation">
+    <meta name="keywords" content="UniverSeg,Segmentation,Medical,Transfer,Neural-Networks">
+    <title>UniverSeg</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+        /* open-sans-regular - latin */
+        @font-face {
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 400;
+          src: local('Open Sans Regular'), local('OpenSans-Regular'),
+               url('../fonts/open-sans-v15-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+               url('../fonts/open-sans-v15-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        }
+        /* open-sans-600 - latin */
+        @font-face {
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 600;
+          src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+               url('../fonts/open-sans-v15-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+               url('../fonts/open-sans-v15-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        }
+
+
+        .jumbotron {
+            background-color: #A31F34;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .jumbotron a {
+            color: white;
+        }
+
+        body {
+            margin: auto;
+            padding: 0;
+            color: #000;
+            -webkit-transition: all;
+            -moz-transition: all;
+            -ms-transition: all;
+            -o-transition: all;
+            transition: all;
+            font-size: 18px;
+            text-align: justify;
+            font-weight: 400
+        }
+
+        .container {
+            max-width: 1100px;
+        }
+
+
+        body {
+          font-family: "Titillium Web","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+          color: #4a4a4a;
+          background-color: #fdfdfd;
+        }
+
+        h2 {
+          color: #2d2d2d;
+        }
+
+        h2 {
+          margin-top: 50px;
+          font-size: 24pt;
+        }
+
+        p {
+          font-size: 12pt;
+        }
+
+        .jumbotron {
+            background-color: #fdfdfd;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .jumbotron a {
+            color: #2d2d2d;
+        }
+
+        .jumbotron h1 {
+          font-size: 52pt;
+          font-weight: 400;
+        }
+
+        h3 {
+          font-size: 24pt;
+          font-weight: 300;
+        }
+
+          .table-like {
+            display: flex;
+            flex-wrap: wrap;
+            flex-flow: row wrap;
+            justify-content: center;
+          }
+
+
+        .table-like div {
+            max-width: 95%;
+            margin:auto;
+            padding: 10px;
+          }
+
+
+         a:link,a:visited
+          {
+            color: #1367a7;
+            text-decoration: none;
+          }
+          a:hover {
+            color: #208799;
+          }
+
+        p small {
+          font-weight: 350;
+        }
+
+        .row {
+          margin-left: 0px;
+          margin-right: 0px;
+        }
+
+        .button-link {
+            font-family:  sans-serif;
+
+          background-color: #363636;
+          color: white;
+          border-radius: 290486px;
+          padding: 10px;
+          border-color: #363636;
+          font-weight: 200;
+          padding: 0.3em 1em;
+          margin: .5em .5em;
+        }
+
+        .button-link svg {
+          padding-top: .1em;
+        }
+
+        .button-link:hover {
+          background-color: #363636;
+          color: white;
+          border-radius: 290486px;
+          padding: 10px;
+          border-color: #363636;
+          font-weight: 200;
+          padding: 0.25em 1em;
+        }
+
+        .citation {
+            font-family: monospace;
+            background-color: #fcf8e3;
+            color: #8a6d3b;
+            font-size: 12pt;
+            border-color: #faebcc;
+        }
+
+        .jumbotron h1 {
+            color: #202020;
+        }
+
+        .col-sm-offset-1 {
+            margin-left: 2.5%;
+        }
+
+        .col-sm-10 {
+            width: 95%;
+        }
+
+        .img-responsive {
+            margin-top: 20px;
+        }
+
+/* Hide desktop-only elements on mobile devices */
+@media only screen and (max-width: 767px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+/* Hide mobile-only elements on desktop devices */
+@media only screen and (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+    </style>
+
+
+    <!-- <link rel="stylesheet" href="assets/bulma.min.css"> -->
+
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>UniverSeg</h1>
+            <h3>Universal Medical Image Segmentation</h3>
+            <!-- <br>
+            <p style="color:white"><a href="https://victorbutoi.github.io/">Victor Ion Butoi*</a><sup>1</sup>,
+                <a href="https://josejg.com/">Jose Javier Gonzalez Ortiz*</a><sup>1</sup>,
+                <a href="https://www.linkedin.com/in/tianyu-ma-472219174/">Tianyu Ma</a><sup>3</sup>,
+                <a href="https://people.csail.mit.edu/guttag/">John Guttag</a><sup>1</sup>,
+                <a href="https://sabuncu.engineering.cornell.edu/">Mert R. Sabuncu</a><sup>3</sup>,
+                <a href="http://www.mit.edu/~adalca/">Adrian V. Dalca</a><sup>1,2</sup>
+                <br><sup>1</sup>MIT, <sup>2</sup>Harvard Medical School, <sup>3</sup>Cornell</p>
+            <br>
+            <p style="color:white"><small>* Indicates equal contribution</small></p> -->
+            <h2></h2>
+            <center>
+  <!-- First row --->
+<div class="desktop-only">
+  <div class="table-like" style="justify-content:space-evenly;max-width:880px;margin:auto;">
+    <div width="1"></div>
+    <div>
+      <center>
+        <a href="https://victorbutoi.github.io/" style="font-size: larger">Victor Ion Butoi
+            <span style="font-weight: 600; font-size: 18pt">*</span>
+        </a>
+      </center>
+      <center>
+        MIT CSAIL
+      </center>
+    </div>
+
+    <div>
+      <center>
+        <a href="https://josejg.com" style="font-size: larger">Jose Javier Gonzalez Ortiz
+            <span style="font-weight: 600; font-size: 18pt">*</span>
+        </a>
+      </center>
+      <center>
+        MIT CSAIL
+      </center>
+    </div>
+    <div>
+      <center>
+        <a href="https://www.linkedin.com/in/tianyu-ma-472219174" style="font-size: larger">Tianyu Ma</a>
+      </center>
+      <center>
+        Cornell University
+      </center>
+    </div>
+    <div style="padding: 20px" width="1"></div>
+  </div>
+
+  <!-- Second row --->
+  <div class="table-like" style="justify-content:space-evenly;max-width:880px;margin:auto;">
+    <div style="padding: 10px" width="1"></div>
+      <div>
+      <center>
+        <a href="https://sabuncu.engineering.cornell.edu/" style="font-size: larger">Mert R. Sabuncu</a>
+      </center>
+      <center>
+        Cornell University
+      </center>
+    </div>
+    <div style="padding: 25px" width="1"></div>
+    <div>
+      <center>
+        <a href="https://people.csail.mit.edu/guttag/" style="font-size: larger">John Guttag</a>
+      </center>
+      <center>
+        MIT CSAIL
+      </center>
+    </div>
+    <div style="padding: 10px" width="1"></div>
+    <div>
+      <center>
+        <a href="http://www.mit.edu/~adalca/" style="font-size: larger">Adrian V. Dalca</a>
+      </center>
+      <center>
+        MIT CSAIL & HMS, MGH
+      </center>
+    </div>
+    <div style="padding: 10px" width="1"></div>
+  </div>
+    <p><small>* Indicates equal contribution</small></p>
+</center>
+        </div>
+    </div>
+</div>
+
+<div class="mobile-only">
+
+  <div class="table-like" style="justify-content:space-evenly;max-width:880px;margin:auto;">
+    <div>
+      <center>
+        <a href="https://victorbutoi.github.io/" style="font-size: larger; padding: 0em 2em">Victor Ion Butoi
+            <span style="font-weight: 600; font-size: 18pt">*</span>
+        </a>
+      </center>
+      <center>
+        MIT CSAIL
+      </center>
+    </div>
+
+    <div>
+      <center>
+        <a href="https://josejg.com" style="font-size: larger; padding: 0em 2em">Jose Javier Gonzalez Ortiz
+            <span style="font-weight: 600; font-size: 18pt">*</span>
+        </a>
+      </center>
+      <center>
+        MIT CSAIL
+      </center>
+    </div>
+    <div>
+      <center>
+        <a href="https://www.linkedin.com/in/tianyu-ma-472219174" style="font-size: larger; padding: 0em 2em">Tianyu Ma</a>
+      </center>
+      <center>
+        Cornell University
+      </center>
+    </div>
+  </div>
+
+  <!-- Second row --->
+  <div class="table-like" style="justify-content:space-evenly;max-width:880px;margin:auto;">
+      <div>
+      <center>
+        <a href="https://sabuncu.engineering.cornell.edu/" style="font-size: larger; padding: 0em 2em">Mert R. Sabuncu</a>
+      </center>
+      <center>
+        Cornell University
+      </center>
+    </div>
+    <div>
+      <center>
+        <a href="https://people.csail.mit.edu/guttag/" style="font-size: larger; padding: 0em 2em">John Guttag</a>
+      </center>
+      <center>
+        MIT CSAIL
+      </center>
+    </div>
+    <div>
+      <center>
+        <a href="http://www.mit.edu/~adalca/" style="font-size: larger; padding: 0em 2em">Adrian V. Dalca</a>
+      </center>
+      <center>
+        MIT CSAIL & HMS, MGH
+      </center>
+    </div>
+  </div>
+  <center>
+    <p><small>* Indicates equal contribution</small></p>
+</center>
+</center>
+        </div>
+    </div>
+
+</div>
+
+    <div class="container bg-3">
+        <div class="row text-center">
+           <!--  <div class="col-sm-2 col-sm-offset-3">
+                <a href="https://arxiv.org/abs/1809.05231"><img height="100" width="78" src="./assets/png_versions/paper-thumbnail.png" data-nothumb="" style="border: 1px solid"><br>ArXiv Version<br></a>
+            </div>
+            <div class="col-sm-2">
+      <a href="https://colab.research.google.com/drive/19Sauvhyzae5qvVLguaZRCuH1vJ5oTuw-?usp=sharing"><img height="100" width="78 " src="./assets/png_versions/CollabThumbnail.png" data-nothumb=" " style="border:1px solid "><br>Colab Demo<br></a>
+            </div>
+            <div class="col-sm-2">
+      <a href="https://github.com/VictorButoi/UniverSeg"><img height="100" width="78 " src="./assets/png_versions/code-thumbnail.png" data-nothumb=" " style="border:1px solid "><br>GitHub<br></a> -->
+
+  <a href="https://arxiv.org/abs/1809.05231" target="_blank">
+  <button class="button-link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" focusable="false" viewBox="0 0 20 26">
+  <path fill="currentColor" d="M13.41 0H2C.9 0 0 .9 0 2v22c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6.58L13.41 0zm2.09 20h-11c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h11c.28 0 .5.22.5.5s-.22.5-.5.5zm0-3h-11c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h11c.28 0 .5.22.5.5s-.22.5-.5.5zm.5-3.444c0 .248-.22.444-.5.444h-11c-.28 0-.5-.196-.5-.444v-3.11c0-.25.22-.446.5-.446h11c.28 0 .5.196.5.444v3.112zM15 7a2 2 0 01-2-2V1l6 6h-4z"/>
+</svg>
+    Paper
+  </button>
+ </a>
+
+  <a href="https://github.com/JJGO/UniverSeg" target="_blank">
+  <button class="button-link">
+      <svg fill="#ffffff" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    Code
+  </button>
+ </a>
+
+  <a href="https://colab.research.google.com/drive/19Sauvhyzae5qvVLguaZRCuH1vJ5oTuw-?usp=sharing" target="_blank">
+  <button class="button-link">
+    <svg height="20" width="30" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Google Colab</title><path fill="#F9AB00" fill-rule="evenodd" d="M16.9414 4.9757a7.033 7.033 0 0 0-4.9308 2.0646 7.033 7.033 0 0 0-.1232 9.8068l2.395-2.395a3.6455 3.6455 0 0 1 5.1497-5.1478l2.397-2.3989a7.033 7.033 0 0 0-4.8877-1.9297zM7.07 4.9855a7.033 7.033 0 0 0-4.8878 1.9316l2.3911 2.3911a3.6434 3.6434 0 0 1 5.0227.1271l1.7341-2.9737-.0997-.0802A7.033 7.033 0 0 0 7.07 4.9855zm15.0093 2.1721l-2.3892 2.3911a3.6455 3.6455 0 0 1-5.1497 5.1497l-2.4067 2.4068a7.0362 7.0362 0 0 0 9.9456-9.9476zM1.932 7.1674a7.033 7.033 0 0 0-.002 9.6816l2.397-2.397a3.6434 3.6434 0 0 1-.004-4.8916zm7.664 7.4235c-1.38 1.3816-3.5863 1.411-5.0168.1134l-2.397 2.395c2.4693 2.3328 6.263 2.5753 9.0072.5455l.1368-.1115z"/></svg>
+    Colab
+  </button>
+ </a>
+
+            </div>
+
+  </div>
+</div>
+
+<div class="container bg-3 ">
+
+    <div class="row">
+        <h2 class="text-center ">Overview</h2>
+        <hr>
+        <p>
+        <b>Workflow for inference on a new task, from an unseen dataset.</b> Given a new task, traditional models <b>(left)</b> are trained before making predictions. UniverSeg <b>(right)</b> employs a <i>single</i> trained model which can make predictions for images (queries) from the new task with a few labeled examples as input (support set), without additional fine-tuning.
+      </p>
+        <div class="col-sm-12 text-center">
+            <div class="embed-responsive embed-responsive-16by9" style="padding-bottom:32%; margin-top: 20px">
+                <video id="UVSVideoIdea">
+                    <source src="assets/UVSWebstiteV5.mp4" type="video/mp4" class="img-responsive" style="width:100%" alt="Image">
+                </video>
+                <script>
+                    var video = document.getElementById("UVSVideoIdea");
+
+                    video.addEventListener("mouseover", function() {
+                      video.play();
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container bg-3 ">
+  <div class="row ">
+    <h2 class="text-center ">Abstract</h2>
+    <hr />
+  </div>
+<p>
+    While deep learning models have become the predominant method for medical image segmentation, they are typically not capable of generalizing to unseen segmentation tasks involving new anatomies, image modalities, or labels.
+</p>
+
+<p>
+Given a new segmentation task, researchers have to train or fine-tune models, which is time-consuming and poses a substantial barrier for clinical researchers, who often lack the resources and expertise to train neural networks.
+In this paper, we present UniverSeg, a method for solving unseen medical segmentation tasks without additional training.
+</p>
+
+<p>
+Given a query image and support set of image-label pairs that define a new segmentation task, UniverSeg employs a novel CrossBlock mechanism to produce accurate segmentations without the need for additional training. To achieve strong generalization to new tasks, we have gathered, standardized, and trained on a collection of 53 open-access medical segmentation datasets with over 22,000 scans, which we refer to as MegaMedical. We used this collection to train UniverSeg on a diverse set of anatomies and imaging modalities.
+We demonstrate that UniverSeg substantially outperforms several related methods on unseen tasks, and thoroughly analyze and draw insights about important aspects of our system.
+      </p>
+</div>
+
+
+<div class="container bg-3 ">
+  <div class="row ">
+    <h2 class="text-center ">Method</h2>
+    <hr />
+  <p>
+  A UniverSeg network <b>(left)</b> takes as input a query image and a support set of image and label-maps (pairwise concatenated in the channel dimension) and employs multi-scale CrossBlock features. A CrossBlock <b>(right)</b> takes as input representations of the query u and support set V, and interacts u with each support entry to produce u' and V'.
+  </p>
+    <div class="row ">
+        <div class="col-sm-10 col-sm-offset-1 text-center">
+            <img src="assets/images/v30_UVS_Method.png" class="img-responsive
+                " style="width:100% " alt="Image ">
+        </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="container bg-3 ">
+    <div class="row ">
+        <h2 class="text-center ">Example Segmentations</h2>
+        <hr/>
+        <p>
+        We assess the segmentation performance of UniverSeg models compared to few-shot medical segmentation baselines and individually trained fully supervised networks on several held-out medical datasets.
+        </p>
+        <div class="col-sm-10 col-sm-offset-1 text-center ">
+            <img src="assets/images/v14_UVS_Examples.png" class="img-responsive " style="width:100%" alt="Image">
+        </div>
+    </div>
+</div>
+
+
+<div class="container bg-3 ">
+
+  <div class="row ">
+    <h2 class="text-center ">Citation</h2>
+    <hr />
+        <p>
+        If you find our work or any of our materials useful, please cite our paper:
+        </p>
+    <div class="alert alert-dark citation ">
+        @inproceedings{butoi2023universeg,<br>
+        &nbsp;&nbsp;title={UniverSeg: Universal Medical Image Segmentation},<br>
+        &nbsp;&nbsp;author={Victor Ion Butoi and Jose Javier Gonzalez Ortiz and Tianyu Ma  and Mert R. Sabuncu and John Guttag and Adrian V. Dalca},<br>
+        &nbsp;&nbsp;booktitle={arxiv preprint},<br>
+        &nbsp;&nbsp;year={2023}<br>
+        }
+    </div>
+  </div>
+</div><br><br>
+
+</body>
 </html>
