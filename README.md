@@ -19,10 +19,9 @@
 ## Getting Started
 
 The universeg architecture is described in the [`model.py`](https://github.com/JJGO/UniverSeg/blob/main/universeg/model.py#L125) file.
-
 We provide pre-trained model weights a part of our [release](https://github.com/JJGO/UniverSeg/releases/tag/weights).
 
-To load the UniverSeg model pre-trained with a support size of 64 image-label pairs:
+To instantiate the UniverSeg model (and optionally use  pre-trained weights):
 
 ```python
 from universeg import universeg
@@ -30,7 +29,7 @@ from universeg import universeg
 model = universeg(pretrained=True)
 ```
 
-We provide a jupyter notebook with examples of how to do inference using UniverSeg: [notebook](https://nbviewer.org/github/JJGO/UniverSeg/blob/gh-pages/jupyter/UniverSeg_demo.ipynb#) | [colab](https://colab.research.google.com/assets/colab-badge.svg).
+We provide a jupyter notebook with examples of how to do inference using UniverSeg: [Google colab](https://colab.research.google.com/drive/19Sauvhyzae5qvVLguaZRCuH1vJ5oTuw-?usp=sharing) | [Nbviewer](https://nbviewer.org/github/JJGO/UniverSeg/blob/gh-pages/jupyter/UniverSeg_demo.ipynb#).
 
 
 ## Installation
@@ -66,5 +65,5 @@ If you find our work or any of our materials useful, please cite our paper:
 
 ## Licenses
 
-- **Code**: Code is released under [Apache 2.0 license](LICENSE)
-- **Model Weights**: Model weights are released under [OpenRAIL++-M license](LICENSE-model). According to the usage restriction the model must be only used for research purposes.
+- **Code** is released under [Apache 2.0 license](LICENSE)
+- **Model Weights** are released under [OpenRAIL++-M license](LICENSE-model). According to the usage restriction the model must be only used for research purposes.
