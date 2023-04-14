@@ -424,7 +424,9 @@
         <h2 class="text-center ">Overview</h2>
         <hr>
         <p>
-        <b>Workflow for inference on a new task, from an unseen dataset.</b> Given a new task, traditional models <b>(left)</b> are trained before making predictions. UniverSeg <b>(right)</b> employs a <i>single</i> trained model which can make predictions for images (queries) from the new task with a few labeled examples as input (support set), without additional fine-tuning.
+        <!-- <b>Workflow for inference on a new task, from an unseen dataset.</b> Given a new task, traditional models <b>(left)</b> are trained before making predictions. UniverSeg <b>(right)</b> employs a <i>single</i> trained model which can make predictions for images (queries) from the new task with a few labeled examples as input (support set), without additional fine-tuning. -->
+            For each new segmentation task, existing strategies (left) need to train a new model before making predictions. </br>
+            UniverSeg (right) employs a single model that can make predictions for images from a new segmentation task with a few labeled examples as input, without additional fine-tuning.
       </p>
         <div class="col-sm-12 text-center">
             <div class="embed-responsive embed-responsive-16by9" style="padding-bottom:32%; margin-top: 20px">
