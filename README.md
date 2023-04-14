@@ -1,6 +1,6 @@
 # UniverSeg: Universal Medical Image Segmentation
 
-### [Project Page](https://universeg.csail.mit.edu) | [Paper](https://arxiv.org/abs/1809.05231)
+### [Project Page](https://universeg.csail.mit.edu) | [Paper](http://arxiv.org/abs/2304.06131)
 
 [![Explore UniverSeg in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/19Sauvhyzae5qvVLguaZRCuH1vJ5oTuw-?usp=sharing)<br>
 
@@ -12,7 +12,7 @@
 [Adrian V. Dalca](http://www.mit.edu/~adalca/),
  \*denotes equal contribution
 
- This is the official implementation of the paper ["UniverSeg: Universal Medical Image Segmentation"](https://arxiv.org/abs/1809.05231).
+ This is the official implementation of the paper ["UniverSeg: Universal Medical Image Segmentation"](http://arxiv.org/abs/2304.06131).
 
 ![network](https://raw.githubusercontent.com/JJGO/UniverSeg/gh-pages/assets/images/network-architecture.png)
 
@@ -55,10 +55,10 @@ export PYTHONPATH="$PYTHONPATH:$(realpath ./UniverSeg)"
 
 If you find our work or any of our materials useful, please cite our paper:
 ```
- @inproceedings{butoi2023universeg,
+ @article{butoi2023universeg,
   title={UniverSeg: Universal Medical Image Segmentation},
   author={Victor Ion Butoi and Jose Javier Gonzalez Ortiz and Tianyu Ma and Mert R. Sabuncu and John Guttag and Adrian V. Dalca},
-  booktitle={arxiv preprint},
+  journal={arXiv:2304.02643},
   year={2023}
 }
 ```
