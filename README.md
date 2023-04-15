@@ -27,6 +27,14 @@ To instantiate the UniverSeg model (and optionally use  pre-trained weights):
 from universeg import universeg
 
 model = universeg(pretrained=True)
+
+# To perform a prediction (where B=batch, S=support, H=height, W=width)
+prediction = model(
+    target_image,        # (B, 1, H, W)
+    support_images,      # (B, S, 1, H, W)
+    support_labels,      # (B, S, 1, H, W)
+) # -> (B, 1, H, W)
+
 ```
 
 We provide a jupyter notebook with examples of how to do inference using UniverSeg: [Google colab](https://colab.research.google.com/drive/19Sauvhyzae5qvVLguaZRCuH1vJ5oTuw-?usp=sharing) | [Nbviewer](https://nbviewer.org/github/JJGO/UniverSeg/blob/gh-pages/jupyter/UniverSeg_demo.ipynb#).
