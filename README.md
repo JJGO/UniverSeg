@@ -5,7 +5,7 @@
 [![Explore UniverSeg in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/19Sauvhyzae5qvVLguaZRCuH1vJ5oTuw-?usp=sharing)<br>
 
 [Victor Ion Butoi](https://victorbutoi.github.io)\*,
-[Jose Javier Gonzalez Ortiz](https://josejg.com)\*
+[Jose Javier Gonzalez Ortiz](https://josejg.com)\*,
 [Tianyu Ma](https://www.linkedin.com/in/tianyu-ma-472219174/),
 [Mert R. Sabuncu](https://sabuncu.engineering.cornell.edu/),
 [John Guttag](https://people.csail.mit.edu/guttag/),
