@@ -65,7 +65,7 @@ If you find our work or any of our materials useful, please cite our paper:
 ```
  @article{butoi2023universeg,
   title={UniverSeg: Universal Medical Image Segmentation},
-  author={Victor Ion Butoi and Jose Javier Gonzalez Ortiz and Tianyu Ma and Mert R. Sabuncu and John Guttag and Adrian V. Dalca},
+  author={Victor Ion Butoi* and Jose Javier Gonzalez Ortiz* and Tianyu Ma and Mert R. Sabuncu and John Guttag and Adrian V. Dalca},
   journal={arXiv:2304.02643},
   year={2023}
 }
