@@ -20,7 +20,7 @@ def process_img(path: pathlib.Path, size: Tuple[int, int]):
 
 def process_seg(path: pathlib.Path, size: Tuple[int, int]):
     seg = PIL.Image.open(path)
-    seg = seg.resize(size, resample=PIL.Image.BILINEAR)
+    seg = seg.resize(size, resample=PIL.Image.NEAREST)
     seg = np.array(seg)
     seg = np.stack([seg == 0, seg == 128, seg == 255])
     seg = seg.astype(np.float32)
