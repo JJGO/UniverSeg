@@ -2,7 +2,7 @@
 
 ### [Project Page](https://universeg.csail.mit.edu) | [Paper](http://arxiv.org/abs/2304.06131)
 
-[![Explore UniverSeg in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/19Sauvhyzae5qvVLguaZRCuH1vJ5oTuw-?usp=sharing)<br>
+[![Explore UniverSeg in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1TiNAgCehFdyHMJsS90V9ygUw0rLXdW0r?usp=sharing)<br>
 
 [Victor Ion Butoi](https://victorbutoi.github.io)\*,
 [Jose Javier Gonzalez Ortiz](https://josejg.com)\*,
