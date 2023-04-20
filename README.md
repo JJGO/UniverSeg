@@ -37,6 +37,8 @@ prediction = model(
 
 ```
 
+For all inputs ensure that pixel values are min-max normalized to the $[0,1]$ range and that the spatial dimensions are $(H, W) = (128, 128)$.
+
 We provide a jupyter notebook with examples of how to do inference using UniverSeg: [Google colab](https://colab.research.google.com/drive/1TiNAgCehFdyHMJsS90V9ygUw0rLXdW0r?usp=sharing) | [Nbviewer](https://nbviewer.org/github/JJGO/UniverSeg/blob/gh-pages/jupyter/UniverSeg_demo.ipynb#).
 
 
