@@ -4,24 +4,26 @@
 
 [![Explore UniverSeg in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1TiNAgCehFdyHMJsS90V9ygUw0rLXdW0r?usp=sharing)<br>
 
+Official implementation of ["UniverSeg: Universal Medical Image Segmentation"](http://arxiv.org/abs/2304.06131).
+
 [Victor Ion Butoi](https://victorbutoi.github.io)\*,
 [Jose Javier Gonzalez Ortiz](https://josejg.com)\*,
 [Tianyu Ma](https://www.linkedin.com/in/tianyu-ma-472219174/),
 [Mert R. Sabuncu](https://sabuncu.engineering.cornell.edu/),
 [John Guttag](https://people.csail.mit.edu/guttag/),
-[Adrian V. Dalca](http://www.mit.edu/~adalca/),
+[Adrian V. Dalca](http://www.mit.edu/~adalca/),  
  \*denotes equal contribution
 
- This is the official implementation of the paper ["UniverSeg: Universal Medical Image Segmentation"](http://arxiv.org/abs/2304.06131).
+ 
 
 ![network](https://raw.githubusercontent.com/JJGO/UniverSeg/gh-pages/assets/images/network-architecture.png)
 
 ## Getting Started
 
 The universeg architecture is described in the [`model.py`](https://github.com/JJGO/UniverSeg/blob/main/universeg/model.py#L125) file.
-We provide pre-trained model weights a part of our [release](https://github.com/JJGO/UniverSeg/releases/tag/weights).
+We provide model weights a part of our [release](https://github.com/JJGO/UniverSeg/releases/tag/weights).
 
-To instantiate the UniverSeg model (and optionally use  pre-trained weights):
+To instantiate the UniverSeg model (and optionally use provided weights):
 
 ```python
 from universeg import universeg
@@ -39,7 +41,7 @@ prediction = model(
 
 For all inputs ensure that pixel values are min-max normalized to the $[0,1]$ range and that the spatial dimensions are $(H, W) = (128, 128)$.
 
-We provide a jupyter notebook with examples of how to do inference using UniverSeg: [Google colab](https://colab.research.google.com/drive/1TiNAgCehFdyHMJsS90V9ygUw0rLXdW0r?usp=sharing) | [Nbviewer](https://nbviewer.org/github/JJGO/UniverSeg/blob/gh-pages/jupyter/UniverSeg_demo.ipynb#).
+We provide a jupyter notebook with a tutorial and examples of how to do inference using UniverSeg: [Google colab](https://colab.research.google.com/drive/1TiNAgCehFdyHMJsS90V9ygUw0rLXdW0r?usp=sharing) | [Nbviewer](https://nbviewer.org/github/JJGO/UniverSeg/blob/gh-pages/jupyter/UniverSeg_demo.ipynb#).
 
 
 ## Installation
