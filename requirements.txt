@@ -3,3 +3,4 @@ torch
 pydantic
 numpy
 Pillow
+nibabel
