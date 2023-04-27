@@ -1,3 +1,7 @@
+"""
+OASIS dataset processed at https://github.com/adalca/medical-datasets/blob/master/neurite-oasis.md
+"""
+
 import pathlib
 import subprocess
 from dataclasses import dataclass
