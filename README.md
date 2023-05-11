@@ -18,6 +18,14 @@ Official implementation of ["UniverSeg: Universal Medical Image Segmentation"](h
 
 ![network](https://raw.githubusercontent.com/JJGO/UniverSeg/gh-pages/assets/images/network-architecture.png)
 
+Given a new segmentation task (e.g. new biomedical domain, new image type, new region of interest, etc), most existing strategies involve training or fine-tuning a segmentation model that takes an image input and outputs the segmentation map.    
+
+This process works well in machine-learning labs, but is challenging in many applied settings, such as for scientists or clinical researchers who drive important scientific questions, but often lack the machine-learning expertiese and computational resources necessary.
+
+UniverSeg enables users to tackle a new segmentation task **without the need to train or fine-tune a model**, removing the requirement for ML experience and computational burden. The key idea is to have a single global model which adapts to a new segmentation task at inference based on an input example set.
+
+
+
 ## Getting Started
 
 The universeg architecture is described in the [`model.py`](https://github.com/JJGO/UniverSeg/blob/main/universeg/model.py#L125) file.
