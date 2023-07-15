@@ -4,7 +4,7 @@
 
 [![Explore UniverSeg in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1TiNAgCehFdyHMJsS90V9ygUw0rLXdW0r?usp=sharing)<br>
 
-Official implementation of ["UniverSeg: Universal Medical Image Segmentation"](http://arxiv.org/abs/2304.06131).
+Official implementation of ["UniverSeg: Universal Medical Image Segmentation"](http://arxiv.org/abs/2304.06131) accepted at ICCV 2023.
 
 [Victor Ion Butoi](https://victorbutoi.github.io)\*,
 [Jose Javier Gonzalez Ortiz](https://josejg.com)\*,
@@ -78,7 +78,7 @@ If you find our work or any of our materials useful, please cite our paper:
  @article{butoi2023universeg,
   title={UniverSeg: Universal Medical Image Segmentation},
   author={Victor Ion Butoi* and Jose Javier Gonzalez Ortiz* and Tianyu Ma and Mert R. Sabuncu and John Guttag and Adrian V. Dalca},
-  journal={arXiv:2304.02643},
+  journal={International Conference on Computer Vision},
   year={2023}
 }
 ```
